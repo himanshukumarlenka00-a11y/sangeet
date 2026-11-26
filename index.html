@@ -115,7 +115,7 @@
     </svg>
   </div>
 
-  <!-- Custom Dark-Mode Admin PIN Modal (No Browser Dialogs) -->
+  <!-- Custom Dark-Mode Admin PIN Modal -->
   <div
     id="adminModal"
     role="dialog"
@@ -486,79 +486,124 @@
             </div>
           </div>
 
-          <!-- Field 5 — Side Performers -->
+          <!-- Field 5 — Side Performers (Total first, then Side Men & Side Women) -->
           <div>
             <span class="block text-[13px] font-semibold tracking-wide text-[#4B2834] dark:text-[#E7DEC8] mb-2.5">
               5. Side Performers <span class="font-normal text-[#8B717A] dark:text-[#9D92B0]">(Backup Dancers / Chorus)</span>
             </span>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FDF8F0]/75 dark:bg-[#0D0B18] border border-[#B8860B]/20 dark:border-white/[0.09]">
-                <label for="sideMenInput" class="text-[13.5px] font-medium text-[#3E101E] dark:text-[#FAF6EE] select-none">
-                  Side Men
-                </label>
+
+            <div class="space-y-3">
+              <!-- Top Row: Total Side Performers -->
+              <div class="flex items-center justify-between px-4 py-3.5 rounded-xl bg-[#B8860B]/[0.08] dark:bg-[#F5C767]/[0.08] border border-[#B8860B]/30 dark:border-[#F5C767]/30">
+                <div>
+                  <label for="sideTotalInput" class="block text-[13.5px] font-bold text-[#3E101E] dark:text-[#F5C767] select-none">
+                    Total Side Performers
+                  </label>
+                  <span class="text-[11px] text-[#7A5E68] dark:text-[#B3A8C4]">
+                    Combined backup crew (Men + Women)
+                  </span>
+                </div>
                 <div class="flex items-center gap-1.5">
                   <button
                     type="button"
-                    data-counter-target="sideMenInput"
+                    data-counter-target="sideTotalInput"
                     data-step="-1"
-                    aria-label="Decrease Side Men"
-                    class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/30 dark:border-[#F5C767]/25 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
+                    aria-label="Decrease Total Side Performers"
+                    class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/35 dark:border-[#F5C767]/30 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
                   >
                     <span class="text-base leading-none font-bold select-none">&minus;</span>
                   </button>
                   <input
-                    id="sideMenInput"
+                    id="sideTotalInput"
                     type="number"
                     min="0"
-                    max="50"
+                    max="100"
                     value="0"
-                    aria-label="Side Men count"
-                    class="w-10 text-center text-[14.5px] font-bold text-[#2A1820] dark:text-[#FAF6EE] bg-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    aria-label="Total Side Performers count"
+                    class="w-11 text-center text-[15px] font-bold text-[#3E101E] dark:text-[#F5C767] bg-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
                   <button
                     type="button"
-                    data-counter-target="sideMenInput"
+                    data-counter-target="sideTotalInput"
                     data-step="1"
-                    aria-label="Increase Side Men"
-                    class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/30 dark:border-[#F5C767]/25 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
+                    aria-label="Increase Total Side Performers"
+                    class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/35 dark:border-[#F5C767]/30 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
                   >
                     <span class="text-base leading-none font-bold select-none">+</span>
                   </button>
                 </div>
               </div>
 
-              <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FDF8F0]/75 dark:bg-[#0D0B18] border border-[#B8860B]/20 dark:border-white/[0.09]">
-                <label for="sideWomenInput" class="text-[13.5px] font-medium text-[#3E101E] dark:text-[#FAF6EE] select-none">
-                  Side Women
-                </label>
-                <div class="flex items-center gap-1.5">
-                  <button
-                    type="button"
-                    data-counter-target="sideWomenInput"
-                    data-step="-1"
-                    aria-label="Decrease Side Women"
-                    class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/30 dark:border-[#F5C767]/25 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
-                  >
-                    <span class="text-base leading-none font-bold select-none">&minus;</span>
-                  </button>
-                  <input
-                    id="sideWomenInput"
-                    type="number"
-                    min="0"
-                    max="50"
-                    value="0"
-                    aria-label="Side Women count"
-                    class="w-10 text-center text-[14.5px] font-bold text-[#2A1820] dark:text-[#FAF6EE] bg-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  />
-                  <button
-                    type="button"
-                    data-counter-target="sideWomenInput"
-                    data-step="1"
-                    aria-label="Increase Side Women"
-                    class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/30 dark:border-[#F5C767]/25 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
-                  >
-                    <span class="text-base leading-none font-bold select-none">+</span>
-                  </button>
+              <!-- Bottom Row: Side Men & Side Women Breakdown -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FDF8F0]/75 dark:bg-[#0D0B18] border border-[#B8860B]/20 dark:border-white/[0.09]">
+                  <label for="sideMenInput" class="text-[13.5px] font-medium text-[#3E101E] dark:text-[#FAF6EE] select-none">
+                    Side Men
+                  </label>
+                  <div class="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      data-counter-target="sideMenInput"
+                      data-step="-1"
+                      aria-label="Decrease Side Men"
+                      class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/30 dark:border-[#F5C767]/25 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
+                    >
+                      <span class="text-base leading-none font-bold select-none">&minus;</span>
+                    </button>
+                    <input
+                      id="sideMenInput"
+                      type="number"
+                      min="0"
+                      max="50"
+                      value="0"
+                      aria-label="Side Men count"
+                      class="w-10 text-center text-[14.5px] font-bold text-[#2A1820] dark:text-[#FAF6EE] bg-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    />
+                    <button
+                      type="button"
+                      data-counter-target="sideMenInput"
+                      data-step="1"
+                      aria-label="Increase Side Men"
+                      class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/30 dark:border-[#F5C767]/25 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
+                    >
+                      <span class="text-base leading-none font-bold select-none">+</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FDF8F0]/75 dark:bg-[#0D0B18] border border-[#B8860B]/20 dark:border-white/[0.09]">
+                  <label for="sideWomenInput" class="text-[13.5px] font-medium text-[#3E101E] dark:text-[#FAF6EE] select-none">
+                    Side Women
+                  </label>
+                  <div class="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      data-counter-target="sideWomenInput"
+                      data-step="-1"
+                      aria-label="Decrease Side Women"
+                      class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/30 dark:border-[#F5C767]/25 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
+                    >
+                      <span class="text-base leading-none font-bold select-none">&minus;</span>
+                    </button>
+                    <input
+                      id="sideWomenInput"
+                      type="number"
+                      min="0"
+                      max="50"
+                      value="0"
+                      aria-label="Side Women count"
+                      class="w-10 text-center text-[14.5px] font-bold text-[#2A1820] dark:text-[#FAF6EE] bg-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    />
+                    <button
+                      type="button"
+                      data-counter-target="sideWomenInput"
+                      data-step="1"
+                      aria-label="Increase Side Women"
+                      class="w-8 h-8 rounded-full flex items-center justify-center bg-white dark:bg-[#1B1830] border border-[#B8860B]/30 dark:border-[#F5C767]/25 text-[#7C1D38] dark:text-[#F5C767] hover:bg-[#7C1D38] hover:text-white dark:hover:bg-[#F5C767] dark:hover:text-[#14101E] active:scale-95 transition-all duration-150 cursor-pointer"
+                    >
+                      <span class="text-base leading-none font-bold select-none">+</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -739,10 +784,10 @@
 
               <div class="p-3 rounded-xl bg-white/75 dark:bg-[#0D0B18]/70 border border-[#B8860B]/15 dark:border-white/[0.06]">
                 <span class="block text-[10.5px] font-semibold uppercase tracking-wider text-[#8B717A] dark:text-[#9D92B0]">
-                  Side Men / Women
+                  Side Performers
                 </span>
                 <span id="passSideCrew" class="block text-[13.5px] font-bold text-[#2A1820] dark:text-[#FAF6EE] mt-0.5">
-                  0 Men, 0 Women
+                  0 Total (0M, 0W)
                 </span>
               </div>
 
@@ -955,6 +1000,7 @@
       const performerNameInput = document.getElementById('performerNameInput');
       const nameErrorMsg = document.getElementById('nameErrorMsg');
       const durationCards = document.querySelectorAll('.duration-card');
+      const sideTotalInput = document.getElementById('sideTotalInput');
       const sideMenInput = document.getElementById('sideMenInput');
       const sideWomenInput = document.getElementById('sideWomenInput');
       const formatBtns = document.querySelectorAll('.format-btn');
@@ -1187,7 +1233,7 @@
       });
 
       // -----------------------------------------------------------
-      // Form Controls Logic
+      // Form Controls Logic & Synchronized Side Performers
       // -----------------------------------------------------------
       function setSide(side) {
         state.side = side;
@@ -1304,6 +1350,50 @@
         return val;
       }
 
+      // Sync Total Side Performers <-> Side Men & Side Women
+      function syncSideTotalFromBreakdown() {
+        const men = clampInput(sideMenInput);
+        const women = clampInput(sideWomenInput);
+        sideTotalInput.value = men + women;
+      }
+
+      function syncBreakdownFromSideTotal() {
+        const total = clampInput(sideTotalInput);
+        let men = clampInput(sideMenInput);
+        let women = clampInput(sideWomenInput);
+        let diff = total - (men + women);
+
+        while (diff > 0) {
+          if (men <= women && men < 50) {
+            men++;
+          } else if (women < 50) {
+            women++;
+          } else if (men < 50) {
+            men++;
+          } else {
+            break;
+          }
+          diff--;
+        }
+
+        while (diff < 0) {
+          if (women >= men && women > 0) {
+            women--;
+          } else if (men > 0) {
+            men--;
+          } else if (women > 0) {
+            women--;
+          } else {
+            break;
+          }
+          diff++;
+        }
+
+        sideMenInput.value = men;
+        sideWomenInput.value = women;
+        sideTotalInput.value = men + women;
+      }
+
       counterBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
           const target = document.getElementById(btn.dataset.counterTarget);
@@ -1314,12 +1404,24 @@
           let current = parseInt(target.value, 10);
           if (isNaN(current)) current = min;
           target.value = Math.min(max, Math.max(min, current + step));
+
+          if (target.id === 'sideTotalInput') {
+            syncBreakdownFromSideTotal();
+          } else if (target.id === 'sideMenInput' || target.id === 'sideWomenInput') {
+            syncSideTotalFromBreakdown();
+          }
         });
       });
 
-      [sideMenInput, sideWomenInput, groupSizeInput].forEach((input) => {
-        input.addEventListener('blur', () => clampInput(input));
+      sideTotalInput.addEventListener('blur', syncBreakdownFromSideTotal);
+      sideTotalInput.addEventListener('change', syncBreakdownFromSideTotal);
+
+      [sideMenInput, sideWomenInput].forEach((input) => {
+        input.addEventListener('blur', syncSideTotalFromBreakdown);
+        input.addEventListener('change', syncSideTotalFromBreakdown);
       });
+
+      groupSizeInput.addEventListener('blur', () => clampInput(groupSizeInput));
 
       function setFormat(format, focusInput = false) {
         state.format = format;
@@ -1366,6 +1468,7 @@
         nameErrorMsg.classList.add('hidden');
         performerNameInput.classList.remove('border-rose-500', 'focus:border-rose-500', 'focus:ring-rose-500/25');
         setDuration('10m', 10);
+        sideTotalInput.value = 0;
         sideMenInput.value = 0;
         sideWomenInput.value = 0;
         groupSizeInput.value = 5;
@@ -1415,8 +1518,10 @@
           return;
         }
 
+        syncSideTotalFromBreakdown();
         const sideMen = clampInput(sideMenInput);
         const sideWomen = clampInput(sideWomenInput);
+        const sideTotal = sideMen + sideWomen;
         const groupSize = state.format === 'Group' ? clampInput(groupSizeInput) : 1;
 
         const payload = {
@@ -1451,8 +1556,9 @@
           updateStatsAndLineup();
 
           const passNum = String(state.entries.length).padStart(2, '0');
+          const savedSideTotal = savedEntry.sideMen + savedEntry.sideWomen;
           const totalActPerformers =
-            (savedEntry.format === 'Group' ? savedEntry.groupSize : 1) + savedEntry.sideMen + savedEntry.sideWomen;
+            (savedEntry.format === 'Group' ? savedEntry.groupSize : 1) + savedSideTotal;
 
           passCoupleHeader.textContent = `${GROOM_NAME} ♥ ${BRIDE_NAME} • Sangeet Night`;
           passNumberLabel.textContent = `STAGE PASS #${passNum}`;
@@ -1463,7 +1569,7 @@
           passCategoryBadge.textContent = savedEntry.category;
           passCategoryText.textContent = savedEntry.category;
           passDuration.textContent = savedEntry.duration;
-          passSideCrew.textContent = `${savedEntry.sideMen} Men, ${savedEntry.sideWomen} Women`;
+          passSideCrew.textContent = `${savedSideTotal} Total (${savedEntry.sideMen} Men, ${savedEntry.sideWomen} Women)`;
           passTotalPerformers.textContent = `${totalActPerformers} ${totalActPerformers === 1 ? 'Performer' : 'Performers'}`;
 
           registrationForm.classList.add('hidden');
@@ -1682,8 +1788,9 @@
           .map(({ item, originalIdx, startMin, endMin }, visIdx) => {
             const slotNum = String(originalIdx + 1).padStart(2, '0');
             const formatPill = item.format === 'Group' ? `Group of ${item.groupSize}` : 'Solo';
+            const sideCrewTotal = item.sideMen + item.sideWomen;
             const totalActHeadcount =
-              (item.format === 'Group' ? item.groupSize : 1) + item.sideMen + item.sideWomen;
+              (item.format === 'Group' ? item.groupSize : 1) + sideCrewTotal;
 
             const isFirst = visIdx === 0;
             const isLast = visIdx === visibleEntries.length - 1;
@@ -1764,11 +1871,9 @@
                     </h3>
 
                     <p class="text-[12px] text-[#7A5E68] dark:text-[#A499B5] mt-1">
-                      Side Men: <strong class="font-semibold text-[#3E101E] dark:text-[#E7DEC8]">${item.sideMen}</strong>
+                      Side Crew: <strong class="font-semibold text-[#3E101E] dark:text-[#E7DEC8]">${sideCrewTotal}</strong> (${item.sideMen}M, ${item.sideWomen}W)
                       &nbsp;&bull;&nbsp;
-                      Side Women: <strong class="font-semibold text-[#3E101E] dark:text-[#E7DEC8]">${item.sideWomen}</strong>
-                      &nbsp;&bull;&nbsp;
-                      <span class="text-[#8B717A] dark:text-[#9D92B0]">Total: ${totalActHeadcount}</span>
+                      <span class="text-[#8B717A] dark:text-[#9D92B0]">Total Act: ${totalActHeadcount}</span>
                     </p>
                   </div>
                 </div>
@@ -1831,6 +1936,7 @@
           'Category',
           'Performer Name',
           'Duration',
+          'Total Side Performers',
           'Side Men',
           'Side Women',
           'Format',
@@ -1846,7 +1952,8 @@
           cumulativeMins = endMin;
 
           const leadOrGroup = item.format === 'Group' ? item.groupSize : 1;
-          const totalPerformers = leadOrGroup + item.sideMen + item.sideWomen;
+          const sideTotal = item.sideMen + item.sideWomen;
+          const totalPerformers = leadOrGroup + sideTotal;
           const normalized = normalizeSide(item.side);
           const repSide =
             normalized === "Groom's Side"
@@ -1861,6 +1968,7 @@
             item.category,
             item.name,
             item.duration,
+            sideTotal,
             item.sideMen,
             item.sideWomen,
             item.format,
